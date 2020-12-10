@@ -9,7 +9,6 @@ user_list = []
 
 for i in range(list_length):
     user_list.append(input("Добавьте элемент в список: "))
-
     i += 1
 
 new_list = []
