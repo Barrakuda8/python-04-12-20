@@ -7,8 +7,7 @@ def two_out_of_three(num1: float, num2: float, num3: float) -> float:
     """
     num_list = [num1, num2, num3]
     num_list.remove(min(num_list))
-    result = sum(num_list)
-    return result
+    return sum(num_list)
 
 
 def better_float_output(number: float, decimal=2) -> float or int:
@@ -31,14 +30,11 @@ def float_input(text: str) -> float:
     while True:
         user_num = input(text)
         try:
-            user_num = float(user_num)
-            break
+            return float(user_num)
         except ValueError:
             continue
-    return user_num
 
 
-user_sum = two_out_of_three(float_input("Введите первое число: "),
-                            float_input("Введите второе число: "), float_input("Введите третье число: "))
-print(better_float_output(user_sum, 2))
-
+print(better_float_output(two_out_of_three(float_input("Введите первое число: "),
+                                           float_input("Введите второе число: "),
+                                           float_input("Введите третье число: ")), 2))

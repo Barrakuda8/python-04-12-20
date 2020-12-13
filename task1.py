@@ -5,8 +5,7 @@ def divide(dividend: float, divisor: float) -> float or int:
     :return: result
     """
     try:
-        result = round(dividend / divisor, 4)
-        return result
+        return round(dividend / divisor, 4)
     except ZeroDivisionError:
         print("Нельзя делить на 0")
         exit()
@@ -32,16 +31,10 @@ def float_input(text: str) -> float:
     while True:
         user_num = input(text)
         try:
-            user_num = float(user_num)
-            break
+            return float(user_num)
         except ValueError:
             continue
-    return user_num
 
 
-user_dividend = float_input("Введите делимое: ")
-user_divisor = float_input("Введите делитель: ")
-
-
-print("Частное:", better_float_output(divide(user_dividend, user_divisor), 2))
-
+print("Частное:", better_float_output(divide(float_input("Введите делимое: "),
+                                             float_input("Введите делитель: ")), 2))

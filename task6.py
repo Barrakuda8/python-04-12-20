@@ -6,8 +6,7 @@ def title_func(text: str) -> str:
     :param text: text to transform
     :return: transformed text
     """
-    title_text = text.title()
-    return title_text
+    return text.title()
 
 
 def latin_input(text: str) -> str:
@@ -17,7 +16,7 @@ def latin_input(text: str) -> str:
     """
     while True:
         user_text = input(text)
-        pattern = re.compile("[a-zA-Z]+")
+        pattern = re.compile("[a-zA-Z ]+")
         if pattern.fullmatch(user_text):
             return user_text.lower()
 

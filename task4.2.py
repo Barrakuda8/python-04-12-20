@@ -22,10 +22,9 @@ def pos_float_input(text: str) -> float:
         try:
             user_num = float(user_num)
             if user_num > 0:
-                break
+                return user_num
         except ValueError:
             continue
-    return user_num
 
 
 def neg_int_input(text: str) -> int:
@@ -38,10 +37,9 @@ def neg_int_input(text: str) -> int:
         try:
             user_num = int(user_num)
             if user_num < 0:
-                break
+                return user_num
         except ValueError:
             continue
-    return user_num
 
 
 def better_float_output(number: float, decimal=2) -> float or int:

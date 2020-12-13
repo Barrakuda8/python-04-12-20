@@ -8,7 +8,7 @@ def user_data_output(name: str, surname: str, birth_year: int, living_city: str,
     :param phone: user phone number
     :return: one line user information
     """
-    print(f"{name.title()} {surname.title()} родился(ась) в {birth_year} году, "
+    print(f"{name.title()} {surname.title()} {birth_year}-го года рождения, "
           f"живёт в {living_city.title()}. Email: {email}. Номер телефона: {phone}")
 
 
@@ -20,20 +20,9 @@ def pos_int_input(text: str) -> int:
     while True:
         user_num = input(text)
         if user_num.isdigit():
-            user_num = int(user_num)
-            break
-    return user_num
+            return int(user_num)
 
 
-user_name = input("Ваше имя: ")
-user_surname = input("Ваша фамилия: ")
-user_year = pos_int_input("Год рождения: ")
-user_city = input("В каком городе вы живёте: ")
-user_email = input("Ваш электронный адрес: ")
-user_phone = input("Ваш номер телефона: ")
-
-
-user_data_output(name=user_name, surname=user_surname, birth_year=user_year,
-                 living_city=user_city, email=user_email, phone=user_phone)
-
-
+user_data_output(name=input("Ваше имя: "), surname=input("Ваша фамилия: "),
+                 birth_year=pos_int_input("Год рождения: "), living_city=input("В каком городе вы живёте: "),
+                 email=input("Ваш электронный адрес: "), phone=input("Ваш номер телефона: "))
