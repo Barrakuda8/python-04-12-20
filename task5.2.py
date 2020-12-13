@@ -1,6 +1,3 @@
-import keyboard
-
-
 def nums_input(text: str) -> list:
     """ Function to make user input a list of decimal or integer numbers separated by spaces and maybe a symbol to
     end the program (*)
@@ -8,9 +5,9 @@ def nums_input(text: str) -> list:
     :return: a list of numbers with maybe an *
     """
     while True:
-        user_nums = input(text)
+        user_nums = input()
         if user_nums == "":
-            user_nums = input()
+            user_nums = input(text)
         user_nums = list(user_nums.split())
         if "*" in user_nums[-1]:
             user_nums.remove("*")
@@ -39,6 +36,7 @@ def better_float_output(number: float, decimal=2) -> float or int:
         return round(number, decimal)
 
 
+print("Для старта нажмите 'Enter'")
 result = 0
 while True:
     user_numbers = nums_input("Введите числа через пробел: ")
@@ -54,5 +52,3 @@ while True:
         print(f"Сумма всех чисел: равна {result}\n"
               f"Для ввода дополнительных чисел нажмите 'Enter'\n"
               f"Для завершения программы введите '*'")
-        keyboard.wait('Enter')
-
