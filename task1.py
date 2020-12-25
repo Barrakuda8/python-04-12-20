@@ -2,20 +2,22 @@ import time
 
 
 class TrafficLight:
-    __color = "green"
 
-    def running(self):
-        __color = "red"
-        print(__color)
-        time.sleep(7)
-        __color = "yellow"
-        print(__color)
-        time.sleep(2)
-        __color = "green"
-        print(__color)
-        time.sleep(7)
+    def __init__(self, color):
+        self.__color = color
+
+    def running(self, new_color):
+        col = {"red": ("yellow", 2), "yellow": ("green", 7), "green": ("red", 7)}
+        if new_color != col[self.__color][0]:
+            print("Неправильный порядок переключения")
+        else:
+            print(f"Светофор переключён на {col[self.__color][0]}. Продолжительность: {col[self.__color][1]} сек")
+            time.sleep(col[self.__color][1])
+            self.__color = new_color
 
 
-light = TrafficLight()
-light.running()
-
+light = TrafficLight("red")
+light.running("yellow")
+light.running("green")
+light.running("red")
+light.running("green")
